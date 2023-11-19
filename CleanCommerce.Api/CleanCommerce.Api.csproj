@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>76140091-ee2e-405a-85bc-d0fc7199f583</UserSecretsId>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.4.0" />
+    <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CleanCommerce.Application\CleanCommerce.Application.csproj" />
+    <ProjectReference Include="..\CleanCommerce.Contracts\CleanCommerce.Contracts.csproj" />
+    <ProjectReference Include="..\CleanCommerce.Infrastructure\CleanCommerce.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
