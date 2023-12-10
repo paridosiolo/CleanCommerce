@@ -18,6 +18,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{83A7CB4E-8
 		Api.md = Api.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain Models", "Domain Models", "{782E4DF1-2C39-420B-B95B-70C0FE2A5D96}"
+	ProjectSection(SolutionItems) = preProject
+		Aggregate.Cart.md = Aggregate.Cart.md
+		Aggregate.Category.md = Aggregate.Category.md
+		Aggregate.Feedback.md = Aggregate.Feedback.md
+		Aggregate.Order.md = Aggregate.Order.md
+		Aggregate.Product.md = Aggregate.Product.md
+		Aggregate.User.md = Aggregate.User.md
+		Aggregate.Promotion.md = Aggregate.Promotion.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +58,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{782E4DF1-2C39-420B-B95B-70C0FE2A5D96} = {83A7CB4E-8E78-4209-B9F9-C0663EA7FCCA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {647D9D10-B40B-4664-88BC-2E431201E519}
