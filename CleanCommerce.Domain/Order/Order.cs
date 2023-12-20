@@ -20,6 +20,8 @@ namespace CleanCommerce.Domain.Order
         public DateTime Created { get;}
         public OrderStatus Status { get;}
         public Payment Payment { get;}
+        public IReadOnlyList<UserId> UserIds => _userIds.AsReadOnly();
+        public IReadOnlyList<OrderItem> OrderItems => _orderitems.AsReadOnly();
 
         private Order(OrderId id,
                       List<OrderItem> orderitems,

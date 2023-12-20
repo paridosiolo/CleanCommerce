@@ -16,7 +16,7 @@ class Promotion
 	"id" :  { "value" : "00000000-0000-0000-0000-000000000000" },
 	"name" : "30% Discount",
 	"description" : "Description of promo",
-	"percentage" : true
+	"isPercentage" : true
 	"discount" : 30,
 	"startDate" : "2016-01-01T00:00:00.0000000Z",
 	"endDate" : "2016-01-01T00:00:00.0000000Z",

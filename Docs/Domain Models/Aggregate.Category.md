@@ -17,8 +17,8 @@ class Category
 	"name" : "Hoodies",
 	"description" : "Hoodies description",
 	"image" : { "url" : "00000000-0000-0000-0000-000000000000" },
-	"parentCategoryId" :  { "value" : "00000000-0000-0000-0000-000000000000" },
-	"childrenCategoryIds" : [
+	"parent" :  { "value" : "00000000-0000-0000-0000-000000000000" },
+	"children" : [
 		{ "value" : "00000000-0000-0000-0000-000000000000" },
 		{ "value" : "11111111-1111-1111-1111-111111111111" }
 	],
