@@ -30,7 +30,7 @@ namespace CleanCommerce.Domain.User
 
         public IReadOnlyList<OrderId> OrderIds => _orderIds.AsReadOnly();
         public IReadOnlyList<FeedbackId> FeedbackIds => _feedbackIds.AsReadOnly();
-        private User(UserId userId,
+        private User(UserId id,
                      string firstName,
                      string lastName,
                      string email,
@@ -39,7 +39,7 @@ namespace CleanCommerce.Domain.User
                      CartId cartId,
                      DateTime created,
                      DateTime lastLogin,
-                     bool isAuthenticated) : base(userId)
+                     bool isAuthenticated) : base(id)
         {
             FirstName = firstName;
             LastName = lastName;

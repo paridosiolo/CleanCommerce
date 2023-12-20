@@ -19,11 +19,11 @@ class Cart
 	"cartItems" : [
 		{
 			"productId" :  { "value" : "00000000-0000-0000-0000-000000000000" },
-			"quantity" : 1
+			"amount" : 1
 		},
 		{
 			"productId" :  { "value" : "11111111-1111-1111-1111-111111111111" },
-			"quantity" : 2
+			"amount" : 2
 		}],
 }
 ```
