@@ -14,7 +14,7 @@ CleanCommerce is an E-Commerce platform developed using C# and .NET, focusing on
 
 ## Introduction
 
-This project showcases the implementation of Clean Architecture and Domain-Driven Design in an E-Commerce setting. Key focus areas include:
+This project serves as an experimental playground for implementing and understanding software design patterns within the context of an E-Commerce application.
 
 - **Clean Architecture**: Encouraging maintainability and separation of concerns.
 - **Domain-Driven Design (DDD)**: Modeling the business domain into software artifacts.
