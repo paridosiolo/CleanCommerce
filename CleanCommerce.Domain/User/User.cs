@@ -56,8 +56,7 @@ namespace CleanCommerce.Domain.User
                                   string lastName,
                                   string email,
                                   string password,
-                                  string role,
-                                  CartId cartId)
+                                  string role)
 
         {
             return new User(UserId.Create(),
@@ -66,7 +65,7 @@ namespace CleanCommerce.Domain.User
                             email,
                             password,
                             role,
-                            cartId,
+                            CartId.Create(),
                             DateTime.UtcNow,
                             DateTime.UtcNow,
                             false);

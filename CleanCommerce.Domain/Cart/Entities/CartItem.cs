@@ -1,5 +1,5 @@
 ﻿using CleanCommerce.Domain.Common.Models;
-using CleanCommerce.Domain.Order.ValueObjects;
+using CleanCommerce.Domain.Cart.ValueObjects;
 using CleanCommerce.Domain.Product.ValueObjects;
 using System;
 using System.Collections.Generic;

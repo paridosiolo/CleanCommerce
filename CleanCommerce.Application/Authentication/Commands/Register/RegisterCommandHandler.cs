@@ -2,7 +2,7 @@
 using CleanCommerce.Application.Common.Errors;
 using CleanCommerce.Application.Common.Interfaces.Authentication;
 using CleanCommerce.Application.Common.Interfaces.Persistence;
-using CleanCommerce.Domain.Entities;
+using CleanCommerce.Domain.User;
 using FluentResults;
 using MediatR;
 using System;
@@ -35,19 +35,17 @@ namespace CleanCommerce.Application.Authentication.Commands.Register
             }
 
             //create user
-            var user = new User
-            {
-                FirstName = request.FirstName,
-                LastName = request.LastName,
-                Email = request.Email,
-                Password = request.Password
-            };
+            var user = User.Create(request.FirstName,
+                                   request.LastName,
+                                   request.Email,
+                                   request.Password,
+                                   request.Role);
 
             //save user
             _userRepository.Add(user);
 
             //generate token
-            var token = _jwtTokenGenerator.GenerateJwtToken(user.Id, user.FirstName, user.LastName);
+            var token = _jwtTokenGenerator.GenerateJwtToken(user.Id.Value, user.FirstName, user.LastName);
 
             return new AuthenticationResult(user, token);
         }

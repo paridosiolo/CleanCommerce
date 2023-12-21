@@ -3,7 +3,7 @@ using CleanCommerce.Application.Authentication.Common;
 using CleanCommerce.Application.Common.Errors;
 using CleanCommerce.Application.Common.Interfaces.Authentication;
 using CleanCommerce.Application.Common.Interfaces.Persistence;
-using CleanCommerce.Domain.Entities;
+using CleanCommerce.Domain.User;
 using FluentResults;
 using MediatR;
 using System;
@@ -41,7 +41,7 @@ namespace CleanCommerce.Application.Authentication.Queries.Login
             }
 
             //generate token
-            var token = _jwtTokenGenerator.GenerateJwtToken(user.Id, user.FirstName, user.LastName);
+            var token = _jwtTokenGenerator.GenerateJwtToken(user.Id.Value, user.FirstName, user.LastName);
 
             return new AuthenticationResult(user, token);
         }
