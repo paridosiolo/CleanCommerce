@@ -11,5 +11,6 @@ namespace CleanCommerce.Application.Common.Interfaces.Persistence
     {
         void Add(User user);
         User? GetUserByEmail(string email);
+        User? GetUserById(Guid id);
     }
 }

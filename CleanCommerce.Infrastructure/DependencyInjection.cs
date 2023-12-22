@@ -2,6 +2,7 @@
 using CleanCommerce.Application.Common.Interfaces.Persistence;
 using CleanCommerce.Application.Common.Interfaces.Services;
 using CleanCommerce.Infrastructure.Authentication;
+using CleanCommerce.Infrastructure.Common.Security;
 using CleanCommerce.Infrastructure.Persistence;
 using CleanCommerce.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -27,6 +28,7 @@ namespace CleanCommerce.Infrastructure
             serviceCollection.AddAuth(configuration);
             serviceCollection.AddScoped<IDateTimeProvider, DateTimeProvider>();
             serviceCollection.AddScoped<IUserRepository, UserRepository>();
+            serviceCollection.AddScoped<IAuthorizeService, AuthorizeService>();
 
             return serviceCollection;
         }

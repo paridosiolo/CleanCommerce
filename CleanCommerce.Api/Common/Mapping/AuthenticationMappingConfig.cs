@@ -14,6 +14,7 @@ namespace CleanCommerce.Api.Common.Mapping
             config.NewConfig<RegisterRequest, RegisterCommand>();
             config.NewConfig<AuthenticationResult, AuthenticationResponse>()
                 .Map(dest => dest.Token, src => src.Token) //redundant
+                .Map(dest => dest.Id, src => src.User.Id.Value)
                 .Map(dest => dest, src => src.User);
         }
     }

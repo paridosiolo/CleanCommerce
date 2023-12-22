@@ -23,5 +23,13 @@ namespace CleanCommerce.Application.Common.Errors
                 string message = "This field cannot be empty.") =>
                 new ErrorBase(code, ErrorType.Validation, message);
         }
+
+        public static class Authorization
+        {
+            public static ErrorBase Unauthorized(
+                string code = "Authorization.Unauthorized",
+                string message = "User unauthorized") =>
+                new ErrorBase(code, ErrorType.Unauthorized, message);
+        }
     }
 }

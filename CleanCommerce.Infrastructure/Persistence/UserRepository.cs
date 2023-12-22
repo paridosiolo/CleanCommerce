@@ -21,5 +21,9 @@ namespace CleanCommerce.Infrastructure.Persistence
         {
             return _users.SingleOrDefault(u => u.Email == email);
         }
+        public User? GetUserById(Guid userId)
+        {
+            return _users.SingleOrDefault(u => u.Id.Value == userId);
+        }
     }
 }

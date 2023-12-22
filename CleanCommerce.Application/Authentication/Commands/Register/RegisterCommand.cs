@@ -12,6 +12,5 @@ namespace CleanCommerce.Application.Authentication.Commands.Register
     public record RegisterCommand(string FirstName,
                                   string LastName,
                                   string Email,
-                                  string Password,
-                                  string Role) : IRequest<Result<AuthenticationResult>>;
+                                  string Password) : IRequest<Result<AuthenticationResult>>;
 }

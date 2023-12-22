@@ -41,7 +41,7 @@ namespace CleanCommerce.Application.Authentication.Queries.Login
             }
 
             //generate token
-            var token = _jwtTokenGenerator.GenerateJwtToken(user.Id.Value, user.FirstName, user.LastName);
+            var token = _jwtTokenGenerator.GenerateJwtToken(user.Id.Value, user.FirstName, user.LastName, user.Roles);
 
             return new AuthenticationResult(user, token);
         }

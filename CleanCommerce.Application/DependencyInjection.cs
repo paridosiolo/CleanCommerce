@@ -20,7 +20,7 @@ namespace CleanCommerce.Application
         {
             serviceCollection.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
             serviceCollection.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-
+            serviceCollection.AddScoped(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
             serviceCollection.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             return serviceCollection;

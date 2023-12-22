@@ -10,6 +10,5 @@ namespace CleanCommerce.Contracts.Authentication
         string FirstName,
         string LastName,
         string Email,
-        string Password,
-        string Role);
+        string Password);
 }

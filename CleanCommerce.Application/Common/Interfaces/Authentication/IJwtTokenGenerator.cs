@@ -8,6 +8,6 @@ namespace CleanCommerce.Application.Common.Interfaces.Authentication
 {
     public interface IJwtTokenGenerator
     {
-        string GenerateJwtToken(Guid userId, string firstName, string lastName);
+        string GenerateJwtToken(Guid userId, string firstName, string lastName, List<string> roles);
     }
 }
