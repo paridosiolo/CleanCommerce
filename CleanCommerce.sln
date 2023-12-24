@@ -15,7 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanCommerce.Domain", "Cle
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{83A7CB4E-8E78-4209-B9F9-C0663EA7FCCA}"
 	ProjectSection(SolutionItems) = preProject
-		Docs\Api.md = Docs\Api.md
+		Docs\Api.Auth.md = Docs\Api.Auth.md
+		Api.Product.md = Api.Product.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain Models", "Domain Models", "{782E4DF1-2C39-420B-B95B-70C0FE2A5D96}"
