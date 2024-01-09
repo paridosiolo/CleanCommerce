@@ -1,6 +1,6 @@
 ﻿using CleanCommerce.Domain.Category.ValueObjects;
 using CleanCommerce.Domain.Common.Models;
-using CleanCommerce.Domain.Common.Value_Objects;
+using CleanCommerce.Domain.Common.ValueObjects;
 using CleanCommerce.Domain.Product.ValueObjects;
 using System;
 using System.Collections.Generic;

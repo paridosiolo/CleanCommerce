@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Domain.Common.Value_Objects
+namespace CleanCommerce.Domain.Common.ValueObjects
 {
     public sealed class Image : ValueObject
     {
