@@ -15,11 +15,11 @@ namespace CleanCommerce.Api.Controllers
     [AllowAnonymous]
     public class AuthController : ApiController
     {
-        private readonly ISender _mediator;
+        private readonly ISender _sender;
         private readonly IMapper _mapper;
-        public AuthController(ISender mediator, IMapper mapper)
+        public AuthController(ISender sender, IMapper mapper)
         {
-            _mediator = mediator;
+            _sender = sender;
             _mapper = mapper;
         }
 
@@ -28,7 +28,7 @@ namespace CleanCommerce.Api.Controllers
         {
             var command = _mapper.Map<RegisterCommand>(request);
 
-            Result<AuthenticationResult> authResult = await _mediator.Send(command);
+            Result<AuthenticationResult> authResult = await _sender.Send(command);
 
             if (authResult.IsFailed)
             {
@@ -43,7 +43,7 @@ namespace CleanCommerce.Api.Controllers
         {
             var command = _mapper.Map<LoginQuery>(request);
 
-            Result<AuthenticationResult> authResult = await _mediator.Send(command);
+            Result<AuthenticationResult> authResult = await _sender.Send(command);
 
             if (authResult.IsFailed)
             {

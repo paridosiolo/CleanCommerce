@@ -26,13 +26,19 @@ namespace CleanCommerce.Infrastructure
             ConfigurationManager configuration)
         {
             serviceCollection.AddAuth(configuration);
+            serviceCollection.AddPersistence();
             serviceCollection.AddScoped<IDateTimeProvider, DateTimeProvider>();
-            serviceCollection.AddScoped<IUserRepository, UserRepository>();
             serviceCollection.AddScoped<IAuthorizeService, AuthorizeService>();
 
             return serviceCollection;
         }
+        private static IServiceCollection AddPersistence(this IServiceCollection serviceCollection) 
+        {
+            serviceCollection.AddScoped<IUserRepository, UserRepository>();
+            serviceCollection.AddScoped<IProductRepository, ProductRepository>();
 
+            return serviceCollection;
+        }
         private static IServiceCollection AddAuth(this IServiceCollection serviceCollection, ConfigurationManager configuration)
         {
             var jwtSettings = new JwtSettings();

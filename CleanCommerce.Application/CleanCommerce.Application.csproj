@@ -17,4 +17,9 @@
     <ProjectReference Include="..\CleanCommerce.Domain\CleanCommerce.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Menu\Common\" />
+    <Folder Include="Menu\Queries\" />
+  </ItemGroup>
+
 </Project>
