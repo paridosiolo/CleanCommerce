@@ -2,7 +2,7 @@
 using CleanCommerce.Domain.Common.Models.User.ValueObjects;
 using CleanCommerce.Domain.Feedback.ValueObjects;
 using CleanCommerce.Domain.Order.ValueObjects;
-using CleanCommerce.Domain.Product.ValueObjects;
+using CleanCommerce.Domain.Products.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,5 +1,5 @@
 ﻿using CleanCommerce.Domain.Common.Models;
-using CleanCommerce.Domain.Product.ValueObjects;
+using CleanCommerce.Domain.Products.ValueObjects;
 using CleanCommerce.Domain.Promotion.ValueObjects;
 using System;
 using System.Collections.Generic;

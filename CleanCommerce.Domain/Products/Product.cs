@@ -2,7 +2,7 @@
 using CleanCommerce.Domain.Common.Models;
 using CleanCommerce.Domain.Common.ValueObjects;
 using CleanCommerce.Domain.Feedback.ValueObjects;
-using CleanCommerce.Domain.Product.ValueObjects;
+using CleanCommerce.Domain.Products.ValueObjects;
 using CleanCommerce.Domain.Promotion.ValueObjects;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Domain.Product
+namespace CleanCommerce.Domain.Products
 {
     public sealed class Product : AggregateRoot<ProductId>
     {

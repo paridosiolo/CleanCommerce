@@ -1,6 +1,6 @@
 ﻿using CleanCommerce.Domain.Common.Models;
 using CleanCommerce.Domain.Cart.ValueObjects;
-using CleanCommerce.Domain.Product.ValueObjects;
+using CleanCommerce.Domain.Products.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
