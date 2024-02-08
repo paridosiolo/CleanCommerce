@@ -1,4 +1,5 @@
-﻿using CleanCommerce.Application.Menu.Commands.Create;
+﻿using CleanCommerce.Application.Products.Commands.Create;
+using CleanCommerce.Application.Products.Queries.GetProduct;
 using CleanCommerce.Contracts.Product;
 using MapsterMapper;
 using MediatR;
@@ -24,12 +25,27 @@ namespace CleanCommerce.Api.Controllers
 
             var createProductResult = await _sender.Send(command);
 
-            if(createProductResult.IsFailed)
+            if (createProductResult.IsFailed)
             {
                 return Problem(createProductResult.Errors);
             }
 
             return Ok(_mapper.Map<ProductResponse>(createProductResult.Value));
+        }
+
+        [HttpGet("{productId}")]
+        public async Task<IActionResult> Get(Guid productId)
+        {
+            var query = new GetProductQuery(productId);
+
+            var getProductResult = await _sender.Send(query);
+
+            if(getProductResult.IsFailed)
+            {
+                return Problem(getProductResult.Errors);
+            }
+
+            return Ok(getProductResult.Value);
         }
     }
 }

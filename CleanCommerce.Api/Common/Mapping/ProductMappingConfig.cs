@@ -1,6 +1,6 @@
-﻿using CleanCommerce.Application.Menu.Commands.Create;
+﻿using CleanCommerce.Application.Products.Commands.Create;
 using CleanCommerce.Contracts.Product;
-using CleanCommerce.Domain.Product;
+using CleanCommerce.Domain.Products;
 using Mapster;
 
 namespace CleanCommerce.Api.Common.Mapping

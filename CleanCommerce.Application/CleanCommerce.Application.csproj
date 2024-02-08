@@ -18,8 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Menu\Common\" />
-    <Folder Include="Menu\Queries\" />
+    <Folder Include="Products\Common\" />
   </ItemGroup>
 
 </Project>

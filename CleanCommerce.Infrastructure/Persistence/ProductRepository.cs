@@ -1,5 +1,5 @@
 ﻿using CleanCommerce.Application.Common.Interfaces.Persistence;
-using CleanCommerce.Domain.Product;
+using CleanCommerce.Domain.Products;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Concurrent;
@@ -16,6 +16,11 @@ namespace CleanCommerce.Infrastructure.Persistence
         public void Add(Product product)
         {
             _products.Add(product);
+        }
+
+        public Product? GetById(Guid productId)
+        {
+            return _products.FirstOrDefault(p => p.Id.Value == productId);
         }
     }
 }

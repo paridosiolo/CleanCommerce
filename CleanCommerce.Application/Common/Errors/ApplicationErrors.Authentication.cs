@@ -25,7 +25,8 @@ namespace CleanCommerce.Application.Common.Errors
                 "An invalid password was provided");
 
             public static readonly ErrorBase UserNotFound = new ErrorBase(
-                "Authentication.UserNotFound", ErrorType.NotFound,
+                "Authentication.UserNotFound", 
+                ErrorType.NotFound,
                 "User not found");
         }
     }

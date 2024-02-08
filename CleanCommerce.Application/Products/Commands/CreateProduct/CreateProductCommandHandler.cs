@@ -1,6 +1,6 @@
 ﻿using CleanCommerce.Application.Common.Interfaces.Persistence;
 using CleanCommerce.Domain.Common.ValueObjects;
-using CleanCommerce.Domain.Product;
+using CleanCommerce.Domain.Products;
 using FluentResults;
 using MediatR;
 using System;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Application.Menu.Commands.Create
+namespace CleanCommerce.Application.Products.Commands.Create
 {
     public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, Result<Product>>
     {

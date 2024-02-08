@@ -1,4 +1,4 @@
-﻿using CleanCommerce.Domain.Product;
+﻿using CleanCommerce.Domain.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +10,6 @@ namespace CleanCommerce.Application.Common.Interfaces.Persistence
     public interface IProductRepository
     {
         void Add(Product product);
+        Product? GetById(Guid productId);
     }
 }
