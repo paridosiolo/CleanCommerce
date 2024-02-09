@@ -22,5 +22,11 @@ namespace CleanCommerce.Infrastructure.Persistence
         {
             return _products.FirstOrDefault(p => p.Id.Value == productId);
         }
+
+        public bool Delete(Product product)
+        {
+            return _products.Remove(product);
+        }
+
     }
 }

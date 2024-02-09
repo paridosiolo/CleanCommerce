@@ -1,4 +1,5 @@
 ﻿using CleanCommerce.Application.Products.Commands.Create;
+using CleanCommerce.Application.Products.Commands.DeleteProduct;
 using CleanCommerce.Application.Products.Queries.GetProduct;
 using CleanCommerce.Contracts.Product;
 using MapsterMapper;
@@ -46,6 +47,21 @@ namespace CleanCommerce.Api.Controllers
             }
 
             return Ok(_mapper.Map<ProductResponse>(getProductResult.Value));
+        }
+
+        [HttpDelete("{productId}")]
+        public async Task<IActionResult> DeleteProduct(Guid productId)
+        {
+            var command = new DeleteProductCommand(productId);
+
+            var deleteProductResult = await _sender.Send(command);
+
+            if(deleteProductResult.IsFailed)
+            {
+                return Problem(deleteProductResult.Errors);
+            }
+
+            return Ok();
         }
     }
 }
