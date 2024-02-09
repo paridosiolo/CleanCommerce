@@ -19,7 +19,7 @@ namespace CleanCommerce.Api.Controllers
         }
 
         [HttpPost("create")]
-        public async Task<IActionResult> Create(CreateProductRequest request)
+        public async Task<IActionResult> CreateProduct(CreateProductRequest request)
         {
             var command = _mapper.Map<CreateProductCommand>(request);
 
@@ -34,7 +34,7 @@ namespace CleanCommerce.Api.Controllers
         }
 
         [HttpGet("{productId}")]
-        public async Task<IActionResult> Get(Guid productId)
+        public async Task<IActionResult> GetProduct(Guid productId)
         {
             var query = new GetProductQuery(productId);
 
@@ -45,7 +45,7 @@ namespace CleanCommerce.Api.Controllers
                 return Problem(getProductResult.Errors);
             }
 
-            return Ok(getProductResult.Value);
+            return Ok(_mapper.Map<ProductResponse>(getProductResult.Value));
         }
     }
 }
