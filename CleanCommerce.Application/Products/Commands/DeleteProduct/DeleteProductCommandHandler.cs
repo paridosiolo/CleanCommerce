@@ -24,6 +24,7 @@ namespace CleanCommerce.Application.Products.Commands.DeleteProduct
         public async Task<Result<bool>> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
+
             //check if product exists
             if (_productRepository.GetById(request.ProductId) is not Product product)
             {

@@ -23,6 +23,7 @@ namespace CleanCommerce.Application.Products.Commands.Create
         public async Task<Result<Product>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
+
             //Create product
             var product = Product.Create(
                 name: request.Name,

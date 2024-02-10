@@ -27,6 +27,9 @@ namespace CleanCommerce.Infrastructure.Persistence
         {
             return _products.Remove(product);
         }
-
+        public Product Update(Product toUpdate, Product updated) 
+        {
+            return toUpdate.Update(updated.Name, updated.Description, updated.Price, updated.Stock, updated.Images.ToList());
+        }
     }
 }

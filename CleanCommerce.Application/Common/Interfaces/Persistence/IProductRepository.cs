@@ -12,5 +12,6 @@ namespace CleanCommerce.Application.Common.Interfaces.Persistence
         void Add(Product product);
         Product? GetById(Guid productId);
         bool Delete(Product product);
+        Product Update(Product toUpdate, Product updated);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CleanCommerce.Application.Products.Commands.Create;
 using CleanCommerce.Application.Products.Commands.DeleteProduct;
+using CleanCommerce.Application.Products.Commands.UpdateProduct;
 using CleanCommerce.Application.Products.Queries.GetProduct;
 using CleanCommerce.Contracts.Product;
 using MapsterMapper;
@@ -62,6 +63,21 @@ namespace CleanCommerce.Api.Controllers
             }
 
             return Ok();
+        }
+
+        [HttpPut("update")]
+        public async Task<IActionResult> UpdateProduct(UpdateProductRequest request)
+        {
+            var command = _mapper.Map<UpdateProductCommand>(request);
+
+            var updateProductResult = await _sender.Send(command);
+
+            if(updateProductResult.IsFailed) 
+            {
+                return Problem(updateProductResult.Errors);
+            }
+
+            return Ok(_mapper.Map<ProductResponse>(updateProductResult.Value));
         }
     }
 }

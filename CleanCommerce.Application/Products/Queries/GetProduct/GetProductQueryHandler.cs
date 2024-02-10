@@ -25,6 +25,7 @@ namespace CleanCommerce.Application.Products.Queries.GetProduct
         public async Task<Result<Product>> Handle(GetProductQuery request, CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
+
             //check if product exists
             if (_productRepository.GetById(request.ProductId) is not Product product)
             {

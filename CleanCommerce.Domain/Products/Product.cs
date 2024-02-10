@@ -7,6 +7,7 @@ using CleanCommerce.Domain.Promotion.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -48,11 +49,12 @@ namespace CleanCommerce.Domain.Products
             _images = images;
         }
 
-        public static Product Create(string name,
-                                     string description,
-                                     float price,
-                                     int stock,
-                                     List<Image> images)
+        public static Product Create(
+            string name,
+            string description,
+            float price,
+            int stock,
+            List<Image> images)
         {
             var product = new Product(ProductId.Create(),
                                       name,
@@ -65,5 +67,25 @@ namespace CleanCommerce.Domain.Products
             return product;
         }
 
+        public Product Update(
+            string name,
+            string description,
+            float price,
+            int stock,
+            List<Image> images)
+        {
+            // Update the properties of the Product object
+            this.Name = name;
+            this.Description = description;
+            this.Price = price;
+            this.Stock = stock;
+            this.Updated = DateTime.UtcNow;
+
+            // Update the images
+            this._images.Clear();
+            this._images.AddRange(images);
+
+            return this;
+        }
     }
 }
