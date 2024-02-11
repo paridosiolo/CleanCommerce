@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <Folder Include="Categories\Common\" />
-    <Folder Include="Categories\Queries\" />
     <Folder Include="Products\Common\" />
   </ItemGroup>
 

@@ -1,7 +1,7 @@
 ﻿using CleanCommerce.Application.Categories.Commands.Create;
 //using CleanCommerce.Application.Categories.Commands.DeleteCategory;
 //using CleanCommerce.Application.Categories.Commands.UpdateCategory;
-//using CleanCommerce.Application.Categories.Queries.GetCategory;
+using CleanCommerce.Application.Categories.Queries.GetCategory;
 using CleanCommerce.Contracts.Category;
 using Mapster;
 using MapsterMapper;
@@ -25,7 +25,6 @@ namespace CleanCommerce.Api.Controllers
         public async Task<IActionResult> CreateCategory(CreateCategoryRequest request)
         {
             var command = _mapper.Map<CreateCategoryCommand>(request);
-            //var command = request.Adapt<CreateCategoryCommand>();
 
             var createCategoryResult = await _sender.Send(command);
 
@@ -37,20 +36,20 @@ namespace CleanCommerce.Api.Controllers
             return Ok(_mapper.Map<CategoryResponse>(createCategoryResult.Value));
         }
 
-        //[HttpGet("{productId}")]
-        //public async Task<IActionResult> GetCategory(Guid productId)
-        //{
-        //    var query = new GetCategoryQuery(productId);
+        [HttpGet("{productId}")]
+        public async Task<IActionResult> GetCategory(Guid productId)
+        {
+            var query = new GetCategoryQuery(productId);
 
-        //    var getCategoryResult = await _sender.Send(query);
+            var getCategoryResult = await _sender.Send(query);
 
-        //    if(getCategoryResult.IsFailed)
-        //    {
-        //        return Problem(getCategoryResult.Errors);
-        //    }
+            if (getCategoryResult.IsFailed)
+            {
+                return Problem(getCategoryResult.Errors);
+            }
 
-        //    return Ok(_mapper.Map<CategoryResponse>(getCategoryResult.Value));
-        //}
+            return Ok(_mapper.Map<CategoryResponse>(getCategoryResult.Value));
+        }
 
         //[HttpDelete("{productId}")]
         //public async Task<IActionResult> DeleteCategory(Guid productId)
