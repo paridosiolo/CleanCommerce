@@ -25,13 +25,6 @@ namespace CleanCommerce.Application.Products.Commands.UpdateProduct
         {
             await Task.CompletedTask;
 
-            //check if product exists
-            if (_productRepository.GetById(request.ProductId) is not Product productToUpdate)
-            {
-                return Result.Fail(ApplicationErrors.Products.ProductNotFound(
-                    productId: request.ProductId.ToString()));
-            }
-
             var updatedProduct = Product.Create(
                 name: request.Name,
                 description: request.Description,
@@ -39,7 +32,15 @@ namespace CleanCommerce.Application.Products.Commands.UpdateProduct
                 stock: request.Stock,
                 images: request.Images.ConvertAll(i => Image.Create(i.Url)));
 
-            return _productRepository.Update(productToUpdate, updatedProduct);
+            updatedProduct = _productRepository.Update(request.ProductId, updatedProduct);
+
+            if(updatedProduct == null) 
+            {
+                return Result.Fail(ApplicationErrors.Products.ProductNotFound(
+                    productId: request.ProductId.ToString()));
+            }
+
+            return updatedProduct;
         }
     }
 }
