@@ -10,10 +10,9 @@ namespace CleanCommerce.Api.Common.Mapping
     {
         public void Register(TypeAdapterConfig config)
         {
-            config.NewConfig<CreateProductCommand, CreateProductRequest>();
+            config.NewConfig<CreateProductRequest, CreateProductCommand>();
             
-            config.NewConfig<UpdateProductCommand, UpdateProductRequest>()
-                /*.Map(dest => dest.Id, src => src.ProductId)*/;
+            config.NewConfig<UpdateProductRequest, UpdateProductCommand>();
 
             config.NewConfig<Product, ProductResponse>()
                 .Map(dest => dest.Id, src => src.Id.Value)

@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace CleanCommerce.Api.Controllers
 {
     [Route("[controller]")]
-    public class ProductController : ApiController
+    public class ProductsController : ApiController
     {
         ISender _sender;
         IMapper _mapper;
-        public ProductController(ISender sender, IMapper mapper)
+        public ProductsController(ISender sender, IMapper mapper)
         {
             _sender = sender;
             _mapper = mapper;

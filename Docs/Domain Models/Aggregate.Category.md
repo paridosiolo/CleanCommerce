@@ -14,8 +14,8 @@ class Category
 ```json
 {
 	"id" :  "00000000-0000-0000-0000-000000000000",
-	"name" : "Hoodies",
-	"description" : "Hoodies description",
+	"name" : "Sportswear",
+	"description" : "Sportswear description",
 	"image" : { "url" : "00000000-0000-0000-0000-000000000000" },
 	"parent" :  "00000000-0000-0000-0000-000000000000",
 	"children" : [

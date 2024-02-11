@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{83A7CB4E-8E78-4209-B9F9-C0663EA7FCCA}"
 	ProjectSection(SolutionItems) = preProject
 		Docs\Api.Auth.md = Docs\Api.Auth.md
+		Api.Category.md = Api.Category.md
 		Api.Product.md = Api.Product.md
 	EndProjectSection
 EndProject

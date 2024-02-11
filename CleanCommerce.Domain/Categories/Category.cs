@@ -1,4 +1,4 @@
-﻿using CleanCommerce.Domain.Category.ValueObjects;
+﻿using CleanCommerce.Domain.Categories.ValueObjects;
 using CleanCommerce.Domain.Common.Models;
 using CleanCommerce.Domain.Common.ValueObjects;
 using CleanCommerce.Domain.Products.ValueObjects;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Domain.Category
+namespace CleanCommerce.Domain.Categories
 {
     public sealed class Category : AggregateRoot<CategoryId>
     {
