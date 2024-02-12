@@ -97,7 +97,7 @@ GET {{host}}/category/{{id}}
 PUT {{host}}/category/{{id}}
 ```
 
-### update request
+### Update request
 ```json
 {
     "categoryId" : "b18ef197-7571-4d65-89e8-f4a6527e14e5",
@@ -112,7 +112,7 @@ PUT {{host}}/category/{{id}}
 }
 ```
 
-### update response
+### Update response
 ```js
 200 OK
 ```
@@ -140,13 +140,13 @@ PUT {{host}}/category/{{id}}
 DELETE {{host}}/category/{{id}}
 ```
 
-### delete request
+### Delete request
 ```json
 {
 }
 ```
 
-### delete response
+### Delete response
 ```js
 200 OK
 ```

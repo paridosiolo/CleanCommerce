@@ -117,7 +117,7 @@ GET {{host}}/product/{{id}}
 PUT {{host}}/product/{{id}}
 ```
 
-### update request
+### Update request
 ```json
 {
 	"id" :  "00000000-0000-0000-0000-000000000000",
@@ -132,7 +132,7 @@ PUT {{host}}/product/{{id}}
 }
 ```
 
-### update response
+### Update response
 ```js
 200 OK
 ```
@@ -171,13 +171,17 @@ PUT {{host}}/product/{{id}}
 DELETE {{host}}/product/{{id}}
 ```
 
-### delete request
+### Delete request
 ```json
 {
 }
 ```
 
-### delete response
+### Delete response
+```js
+200 OK
+```
+
 ```json
 {
 }
