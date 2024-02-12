@@ -9,8 +9,8 @@ namespace CleanCommerce.Domain.Order.Enums
     public enum OrderStatus
     {
         Created,
-        WaitingPayment,
-        Paid,
+        Pending,
+        Processing,
         Shipped,
         Delivered
     }

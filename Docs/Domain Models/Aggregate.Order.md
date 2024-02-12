@@ -34,7 +34,8 @@ class Order
 		"zip" : "10001"
 	},
 	"created" : "2016-01-01T00:00:00.0000000Z",
-	"status" : "pending"
+	"updated" : "2016-01-01T00:00:00.0000000Z",
+	"status" : "working"
 	"payment" : {
 		"cardNumber" : "0000000000000000",
 		"expirationDate" : "2016-01-01T00:00:00.0000000Z",

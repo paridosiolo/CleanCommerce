@@ -15,11 +15,12 @@ namespace CleanCommerce.Domain.Order
     {
         private readonly List<UserId> _userIds = new();
         private readonly List<OrderItem> _orderitems = new();
-        public decimal TotalPrice { get;}
-        public Address ShippingAddress { get;}
+        public decimal TotalPrice { get; private set; }
+        public Address ShippingAddress { get; private set; }
         public DateTime Created { get;}
-        public OrderStatus Status { get;}
-        public Payment Payment { get;}
+        public DateTime Updated { get; private set; }
+        public OrderStatus Status { get; private set; }
+        public Payment Payment { get; private set; }
         public IReadOnlyList<UserId> UserIds => _userIds.AsReadOnly();
         public IReadOnlyList<OrderItem> OrderItems => _orderitems.AsReadOnly();
 
@@ -28,6 +29,7 @@ namespace CleanCommerce.Domain.Order
                       decimal totalPrice,
                       Address shippingAddress,
                       DateTime created,
+                      DateTime updated,
                       OrderStatus status,
                       Payment payment) : base(id)
         {
@@ -35,6 +37,7 @@ namespace CleanCommerce.Domain.Order
             TotalPrice = totalPrice;
             ShippingAddress = shippingAddress;
             Created = created;
+            Updated = updated;
             Status = status;
             Payment = payment;
         }
@@ -42,7 +45,6 @@ namespace CleanCommerce.Domain.Order
         public static Order Create(List<OrderItem> orderItems,
                                    decimal totalprice,
                                    Address shippingAddress,
-                                   DateTime created,
                                    OrderStatus status,
                                    Payment payment)
         {
@@ -50,7 +52,8 @@ namespace CleanCommerce.Domain.Order
                              orderItems,
                              totalprice,
                              shippingAddress,
-                             created,
+                             DateTime.UtcNow,
+                             DateTime.UtcNow,
                              status,
                              payment);
         }
