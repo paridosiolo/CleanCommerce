@@ -30,7 +30,11 @@ namespace CleanCommerce.Infrastructure.Persistence
         public Product? Update(Guid toUpdateId, Product updated) 
         {
             var toUpdate = GetById(toUpdateId);
-            return toUpdate?.Update(updated.Name, updated.Description, updated.Price, updated.Stock, updated.Images.ToList());
+            return toUpdate?.Update(updated.Name,
+                                    updated.Description,
+                                    updated.Price,
+                                    updated.Stock,
+                                    updated.Images.ToList());
         }
     }
 }

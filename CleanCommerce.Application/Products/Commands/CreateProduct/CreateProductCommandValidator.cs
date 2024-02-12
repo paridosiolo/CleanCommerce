@@ -1,4 +1,4 @@
-﻿using CleanCommerce.Application.Products.Commands.Create;
+﻿using CleanCommerce.Application.Products.Commands.CreateProduct;
 using FluentValidation;
 using System;
 using System.Collections.Generic;

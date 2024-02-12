@@ -1,4 +1,5 @@
-﻿using CleanCommerce.Application.Categories.Commands.Create;
+﻿using CleanCommerce.Application.Categories.Commands.CreateCategory;
+using CleanCommerce.Application.Categories.Commands.UpdateCategory;
 using CleanCommerce.Contracts.Category;
 using CleanCommerce.Domain.Categories;
 using Mapster;
@@ -9,8 +10,8 @@ namespace CleanCommerce.Api.Common.Mapping
     {
         public void Register(TypeAdapterConfig config)
         {
-            config.NewConfig<CreateCategoryRequest, CreateCategoryCommand>()
-                /*.Map(dest => dest.childrenCategoryIds, src => src.childrenCategoryIds)*/;
+            config.NewConfig<CreateCategoryRequest, CreateCategoryCommand>();
+            config.NewConfig<UpdateCategoryRequest, UpdateCategoryCommand>();
 
             config.NewConfig<Category, CategoryResponse>()
                .Map(dest => dest.Id, src => src.Id.Value)

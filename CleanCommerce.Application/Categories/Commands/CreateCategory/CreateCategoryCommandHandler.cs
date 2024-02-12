@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CleanCommerce.Domain.Categories.ValueObjects;
 
-namespace CleanCommerce.Application.Categories.Commands.Create
+namespace CleanCommerce.Application.Categories.Commands.CreateCategory
 {
     public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommand, Result<Category>>
     {

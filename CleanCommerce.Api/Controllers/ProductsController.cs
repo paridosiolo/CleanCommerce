@@ -1,4 +1,4 @@
-﻿using CleanCommerce.Application.Products.Commands.Create;
+﻿using CleanCommerce.Application.Products.Commands.CreateProduct;
 using CleanCommerce.Application.Products.Commands.DeleteProduct;
 using CleanCommerce.Application.Products.Commands.UpdateProduct;
 using CleanCommerce.Application.Products.Queries.GetProduct;

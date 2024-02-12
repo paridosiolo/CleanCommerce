@@ -1,6 +1,6 @@
-﻿using CleanCommerce.Application.Categories.Commands.Create;
-//using CleanCommerce.Application.Categories.Commands.DeleteCategory;
-//using CleanCommerce.Application.Categories.Commands.UpdateCategory;
+﻿using CleanCommerce.Application.Categories.Commands.CreateCategory;
+using CleanCommerce.Application.Categories.Commands.DeleteCategory;
+using CleanCommerce.Application.Categories.Commands.UpdateCategory;
 using CleanCommerce.Application.Categories.Queries.GetCategory;
 using CleanCommerce.Contracts.Category;
 using Mapster;
@@ -51,34 +51,34 @@ namespace CleanCommerce.Api.Controllers
             return Ok(_mapper.Map<CategoryResponse>(getCategoryResult.Value));
         }
 
-        //[HttpDelete("{productId}")]
-        //public async Task<IActionResult> DeleteCategory(Guid productId)
-        //{
-        //    var command = new DeleteCategoryCommand(productId);
+        [HttpDelete("{productId}")]
+        public async Task<IActionResult> DeleteCategory(Guid productId)
+        {
+            var command = new DeleteCategoryCommand(productId);
 
-        //    var deleteCategoryResult = await _sender.Send(command);
+            var deleteCategoryResult = await _sender.Send(command);
 
-        //    if(deleteCategoryResult.IsFailed)
-        //    {
-        //        return Problem(deleteCategoryResult.Errors);
-        //    }
+            if (deleteCategoryResult.IsFailed)
+            {
+                return Problem(deleteCategoryResult.Errors);
+            }
 
-        //    return Ok();
-        //}
+            return Ok();
+        }
 
-        //[HttpPut("update")]
-        //public async Task<IActionResult> UpdateCategory(UpdateCategoryRequest request)
-        //{
-        //    var command = _mapper.Map<UpdateCategoryCommand>(request);
+        [HttpPut("update")]
+        public async Task<IActionResult> UpdateCategory(UpdateCategoryRequest request)
+        {
+            var command = _mapper.Map<UpdateCategoryCommand>(request);
 
-        //    var updateCategoryResult = await _sender.Send(command);
+            var updateCategoryResult = await _sender.Send(command);
 
-        //    if(updateCategoryResult.IsFailed) 
-        //    {
-        //        return Problem(updateCategoryResult.Errors);
-        //    }
+            if (updateCategoryResult.IsFailed)
+            {
+                return Problem(updateCategoryResult.Errors);
+            }
 
-        //    return Ok(_mapper.Map<CategoryResponse>(updateCategoryResult.Value));
-        //}
+            return Ok(_mapper.Map<CategoryResponse>(updateCategoryResult.Value));
+        }
     }
 }

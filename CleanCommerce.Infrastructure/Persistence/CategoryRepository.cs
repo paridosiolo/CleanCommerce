@@ -29,7 +29,12 @@ namespace CleanCommerce.Infrastructure.Persistence
         }
         public Category? Update(Guid toUpdateId, Category updated) 
         {
-            throw new NotImplementedException();
+            var toUpdate = GetById(toUpdateId);
+            return toUpdate?.Update(updated.Name,
+                                    updated.Description,
+                                    updated.Image,
+                                    updated.Parent,
+                                    updated.Children.ToList());
         }
     }
 }
