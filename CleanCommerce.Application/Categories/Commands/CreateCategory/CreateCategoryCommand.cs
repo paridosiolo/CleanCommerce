@@ -1,4 +1,5 @@
-﻿using CleanCommerce.Application.Common.Security.Request;
+﻿using CleanCommerce.Application.Categories.Common;
+using CleanCommerce.Application.Common.Security.Request;
 using CleanCommerce.Domain.Categories;
 using FluentResults;
 using MediatR;
@@ -16,6 +17,4 @@ namespace CleanCommerce.Application.Categories.Commands
         ImageCommand Image,
         Guid ParentCategoryId,
         List<Guid> ChildrenCategoryIds) : IRequest<Result<Category>>;
-
-    public record ImageCommand(string Url);
 }

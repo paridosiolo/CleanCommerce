@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CleanCommerce.Contracts.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,4 @@ namespace CleanCommerce.Contracts.Category
         string ParentCategoryId,
         List<string> ChildrenCategoryIds,
         List<string> ProductIds);
-
-    public record ImageResponse(string Url);
 }

@@ -14,6 +14,7 @@ namespace CleanCommerce.Domain.Common.Models.User.ValueObjects
             Value = value;
         }
         public static UserId Create() => new (Guid.NewGuid());
+        public static UserId Create(Guid guid) => new (guid);
         public override IEnumerable<object> GetEqualityComponents()
         {
             yield return Value;

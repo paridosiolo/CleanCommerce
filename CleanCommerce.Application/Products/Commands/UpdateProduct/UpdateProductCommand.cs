@@ -1,4 +1,5 @@
-﻿using CleanCommerce.Domain.Products;
+﻿using CleanCommerce.Application.Products.Common;
+using CleanCommerce.Domain.Products;
 using FluentResults;
 using MediatR;
 using System;
@@ -16,6 +17,4 @@ namespace CleanCommerce.Application.Products.Commands
         float Price,
         int Stock,
         List<ImageCommand> Images) : IRequest<Result<Product>>;
-
-    public record ImageCommand(string Url);
 }

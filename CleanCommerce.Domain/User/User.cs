@@ -1,4 +1,4 @@
-﻿using CleanCommerce.Domain.Cart.ValueObjects;
+﻿using CleanCommerce.Domain.Carts.ValueObjects;
 using CleanCommerce.Domain.Common.Models;
 using CleanCommerce.Domain.Common.Models.User.ValueObjects;
 using CleanCommerce.Domain.Feedback.ValueObjects;

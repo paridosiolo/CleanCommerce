@@ -1,4 +1,4 @@
-﻿using CleanCommerce.Contracts.Product.Common;
+﻿using CleanCommerce.Contracts.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace CleanCommerce.Contracts.Product
 {
-        public record UpdateProductRequest(
+    public record UpdateProductRequest(
             Guid ProductId,
             string Name,
             string Description,
             float Price,
             int Stock,
-            List<Image> Images);
+            List<ImageRequest> Images);
 }

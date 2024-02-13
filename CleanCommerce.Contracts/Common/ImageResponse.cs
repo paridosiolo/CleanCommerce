@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Contracts.Product.Common
+namespace CleanCommerce.Contracts.Common
 {
-    public record Image(string Url);
+    public record ImageResponse(string Url);
 }

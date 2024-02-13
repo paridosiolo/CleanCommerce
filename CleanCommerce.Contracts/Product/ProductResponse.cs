@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CleanCommerce.Contracts.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,4 @@ namespace CleanCommerce.Contracts.Product
         DateTime Updated,
         List<string> CategoryIds,
         List<string> PromotionIds);
-
-    public record ImageResponse(string Url);
 }

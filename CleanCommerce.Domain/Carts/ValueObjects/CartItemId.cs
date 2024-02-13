@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CleanCommerce.Domain.Common.Models;
 
-namespace CleanCommerce.Domain.Cart.ValueObjects
+namespace CleanCommerce.Domain.Carts.ValueObjects
 {
     public sealed class CartItemId : ValueObject
     {

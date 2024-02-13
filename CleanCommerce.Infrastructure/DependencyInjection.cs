@@ -37,6 +37,7 @@ namespace CleanCommerce.Infrastructure
             serviceCollection.AddScoped<IUserRepository, UserRepository>();
             serviceCollection.AddScoped<IProductRepository, ProductRepository>();
             serviceCollection.AddScoped<ICategoryRepository, CategoryRepository>();
+            serviceCollection.AddScoped<ICartRepository, CartRepository>();
 
             return serviceCollection;
         }

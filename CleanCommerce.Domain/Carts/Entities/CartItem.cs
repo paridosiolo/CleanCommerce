@@ -1,5 +1,5 @@
 ﻿using CleanCommerce.Domain.Common.Models;
-using CleanCommerce.Domain.Cart.ValueObjects;
+using CleanCommerce.Domain.Carts.ValueObjects;
 using CleanCommerce.Domain.Products.ValueObjects;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Domain.Cart.Entities
+namespace CleanCommerce.Domain.Carts.Entities
 {
     public sealed class CartItem : Entity<CartItemId>
     {

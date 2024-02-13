@@ -7,8 +7,8 @@ class Cart
 	Cart Create();
 	Cart Get();
 	Cart Update();
-	Cart Empty();
 	void Delete();
+	Cart Empty();
 }
 ```
 

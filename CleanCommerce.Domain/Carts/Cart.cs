@@ -1,5 +1,5 @@
-﻿using CleanCommerce.Domain.Cart.Entities;
-using CleanCommerce.Domain.Cart.ValueObjects;
+﻿using CleanCommerce.Domain.Carts.Entities;
+using CleanCommerce.Domain.Carts.ValueObjects;
 using CleanCommerce.Domain.Common.Models;
 using CleanCommerce.Domain.Common.Models.User.ValueObjects;
 using System;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Domain.Cart
+namespace CleanCommerce.Domain.Carts
 {
     public sealed class Cart : AggregateRoot<CartId>
     {
