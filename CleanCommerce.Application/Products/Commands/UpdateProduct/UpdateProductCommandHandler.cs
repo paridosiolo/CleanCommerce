@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CleanCommerce.Domain.Common.ValueObjects;
 
-namespace CleanCommerce.Application.Products.Commands.UpdateProduct
+namespace CleanCommerce.Application.Products.Commands
 {
     public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand, Result<Product>>
     {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Application.Products.Commands.UpdateProduct
+namespace CleanCommerce.Application.Products.Commands
 {
     public record UpdateProductCommand(
         Guid ProductId,

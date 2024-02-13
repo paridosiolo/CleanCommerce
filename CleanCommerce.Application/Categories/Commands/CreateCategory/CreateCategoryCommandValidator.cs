@@ -1,4 +1,4 @@
-﻿using CleanCommerce.Application.Categories.Commands.CreateCategory;
+﻿using CleanCommerce.Application.Categories.Commands;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Application.Categories.Commands.CreateCategory
+namespace CleanCommerce.Application.Categories.Commands
 {
     public class CreateCategoryCommandValidator : AbstractValidator<CreateCategoryCommand>
     {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Application.Categories.Queries.GetCategory
+namespace CleanCommerce.Application.Categories.Queries
 {
     public record GetCategoryQuery(Guid CategoryId)
         :IRequest<Result<Category>>;

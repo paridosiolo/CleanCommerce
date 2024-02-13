@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Application.Categories.Commands.CreateCategory
+namespace CleanCommerce.Application.Categories.Commands
 {
     public record CreateCategoryCommand(
         string Name,

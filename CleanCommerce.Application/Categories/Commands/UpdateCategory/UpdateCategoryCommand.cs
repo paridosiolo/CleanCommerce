@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Application.Categories.Commands.UpdateCategory
+namespace CleanCommerce.Application.Categories.Commands
 {
     public record UpdateCategoryCommand(
         Guid CategoryId,

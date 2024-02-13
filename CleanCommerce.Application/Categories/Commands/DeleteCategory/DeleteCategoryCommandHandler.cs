@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection.Metadata.Ecma335;
 
-namespace CleanCommerce.Application.Categories.Commands.DeleteCategory
+namespace CleanCommerce.Application.Categories.Commands
 {
     public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommand, Result<bool>>
     {

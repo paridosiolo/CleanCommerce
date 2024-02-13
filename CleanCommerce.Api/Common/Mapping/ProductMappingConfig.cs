@@ -1,5 +1,4 @@
-﻿using CleanCommerce.Application.Products.Commands.CreateProduct;
-using CleanCommerce.Application.Products.Commands.UpdateProduct;
+﻿using CleanCommerce.Application.Products.Commands;
 using CleanCommerce.Contracts.Product;
 using CleanCommerce.Domain.Products;
 using Mapster;

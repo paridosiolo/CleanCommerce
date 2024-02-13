@@ -1,7 +1,5 @@
-﻿using CleanCommerce.Application.Products.Commands.CreateProduct;
-using CleanCommerce.Application.Products.Commands.DeleteProduct;
-using CleanCommerce.Application.Products.Commands.UpdateProduct;
-using CleanCommerce.Application.Products.Queries.GetProduct;
+﻿using CleanCommerce.Application.Products.Commands;
+using CleanCommerce.Application.Products.Queries;
 using CleanCommerce.Contracts.Product;
 using MapsterMapper;
 using MediatR;

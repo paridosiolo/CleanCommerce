@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Application.Products.Queries.GetProduct
+namespace CleanCommerce.Application.Products.Queries
 {
     public class GetProductQueryHandler : IRequestHandler<GetProductQuery, Result<Product>>
     {

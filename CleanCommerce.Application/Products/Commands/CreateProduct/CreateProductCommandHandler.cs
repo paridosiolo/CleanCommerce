@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Application.Products.Commands.CreateProduct
+namespace CleanCommerce.Application.Products.Commands
 {
     public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, Result<Product>>
     {

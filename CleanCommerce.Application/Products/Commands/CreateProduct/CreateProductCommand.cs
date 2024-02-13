@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Application.Products.Commands.CreateProduct
+namespace CleanCommerce.Application.Products.Commands
 {
     public record CreateProductCommand(
         string Name,

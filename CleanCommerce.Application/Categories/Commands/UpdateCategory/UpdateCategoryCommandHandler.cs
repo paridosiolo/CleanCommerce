@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using CleanCommerce.Domain.Common.ValueObjects;
 using CleanCommerce.Domain.Categories.ValueObjects;
 
-namespace CleanCommerce.Application.Categories.Commands.UpdateCategory
+namespace CleanCommerce.Application.Categories.Commands
 {
     public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryCommand, Result<Category>>
     {

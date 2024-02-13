@@ -1,7 +1,5 @@
-﻿using CleanCommerce.Application.Categories.Commands.CreateCategory;
-using CleanCommerce.Application.Categories.Commands.DeleteCategory;
-using CleanCommerce.Application.Categories.Commands.UpdateCategory;
-using CleanCommerce.Application.Categories.Queries.GetCategory;
+﻿using CleanCommerce.Application.Categories.Commands;
+using CleanCommerce.Application.Categories.Queries;
 using CleanCommerce.Contracts.Category;
 using Mapster;
 using MapsterMapper;
