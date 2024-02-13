@@ -36,10 +36,10 @@ namespace CleanCommerce.Api.Controllers
             return Ok(_mapper.Map<CategoryResponse>(createCategoryResult.Value));
         }
 
-        [HttpGet("{productId}")]
-        public async Task<IActionResult> GetCategory(Guid productId)
+        [HttpGet("{categoryId}")]
+        public async Task<IActionResult> GetCategory(Guid categoryId)
         {
-            var query = new GetCategoryQuery(productId);
+            var query = new GetCategoryQuery(categoryId);
 
             var getCategoryResult = await _sender.Send(query);
 
@@ -51,10 +51,10 @@ namespace CleanCommerce.Api.Controllers
             return Ok(_mapper.Map<CategoryResponse>(getCategoryResult.Value));
         }
 
-        [HttpDelete("{productId}")]
-        public async Task<IActionResult> DeleteCategory(Guid productId)
+        [HttpDelete("{categoryId}")]
+        public async Task<IActionResult> DeleteCategory(Guid categoryId)
         {
-            var command = new DeleteCategoryCommand(productId);
+            var command = new DeleteCategoryCommand(categoryId);
 
             var deleteCategoryResult = await _sender.Send(command);
 
