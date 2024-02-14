@@ -49,20 +49,20 @@ namespace CleanCommerce.Api.Controllers
             return Ok(_mapper.Map<CartResponse>(getCartResult.Value));
         }
 
-        //[HttpDelete("{cartId}")]
-        //public async Task<IActionResult> DeleteCart(Guid cartId)
-        //{
-        //    var command = new DeleteCartCommand(cartId);
+        [HttpDelete("{cartId}")]
+        public async Task<IActionResult> DeleteCart(Guid cartId)
+        {
+            var command = new DeleteCartCommand(cartId);
 
-        //    var deleteCartResult = await _sender.Send(command);
+            var deleteCartResult = await _sender.Send(command);
 
-        //    if (deleteCartResult.IsFailed)
-        //    {
-        //        return Problem(deleteCartResult.Errors);
-        //    }
+            if (deleteCartResult.IsFailed)
+            {
+                return Problem(deleteCartResult.Errors);
+            }
 
-        //    return Ok();
-        //}
+            return Ok();
+        }
 
         //[HttpPut("update")]
         //public async Task<IActionResult> UpdateCart(UpdateCartRequest request)

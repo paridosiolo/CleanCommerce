@@ -23,7 +23,7 @@ namespace CleanCommerce.Application.Carts.Queries
         public async Task<Result<Cart>> Handle(GetCartQuery request, CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
-            if(_cartRepository.GetById(request.CartId) is not Cart cart)
+            if (_cartRepository.GetById(request.CartId) is not Cart cart)
             {
                 return ApplicationErrors.Carts.CartNotFound(
                     cartId: request.CartId.ToString());

@@ -9,6 +9,6 @@ using System.Threading.Tasks;
 
 namespace CleanCommerce.Application.Carts.Queries
 {
-    public record GetCartQuery(Guid CartId) 
+    public record GetCartQuery(Guid CartId)
         : IRequest<Result<Cart>>;
 }
