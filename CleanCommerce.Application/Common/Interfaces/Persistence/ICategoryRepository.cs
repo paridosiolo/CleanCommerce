@@ -1,4 +1,6 @@
 ﻿using CleanCommerce.Domain.Categories;
+using CleanCommerce.Domain.Categories.ValueObjects;
+using CleanCommerce.Domain.Common.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +14,11 @@ namespace CleanCommerce.Application.Common.Interfaces.Persistence
         void Add(Category category);
         Category? GetById(Guid categoryId);
         bool Delete(Category category);
-        Category? Update(Guid toUpdateId, Category updated);
+        Category? Update(Guid toUpdateId,
+                         string name,
+                         string description,
+                         Image image,
+                         CategoryId parent,
+                         List<CategoryId> children);
     }
 }

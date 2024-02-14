@@ -25,14 +25,12 @@ namespace CleanCommerce.Application.Products.Commands
         {
             await Task.CompletedTask;
 
-            var updatedProduct = Product.Create(
-                name: request.Name,
-                description: request.Description,
-                price: request.Price,
-                stock: request.Stock,
-                images: request.Images.ConvertAll(i => Image.Create(i.Url)));
-
-            updatedProduct = _productRepository.Update(request.ProductId, updatedProduct);
+            var updatedProduct = _productRepository.Update(request.ProductId,
+                                                           request.Name,
+                                                           request.Description,
+                                                           request.Price,
+                                                           request.Stock,
+                                                           request.Images.ConvertAll(i => Image.Create(i.Url)));
 
             if(updatedProduct == null) 
             {

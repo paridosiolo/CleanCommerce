@@ -1,4 +1,5 @@
-﻿using CleanCommerce.Domain.Products;
+﻿using CleanCommerce.Domain.Common.ValueObjects;
+using CleanCommerce.Domain.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,11 @@ namespace CleanCommerce.Application.Common.Interfaces.Persistence
         void Add(Product product);
         Product? GetById(Guid productId);
         bool Delete(Product product);
-        Product? Update(Guid toUpdateId, Product updated);
+        Product? Update(Guid toUpdateId,
+                        string name,
+                        string description,
+                        float price,
+                        int stock,
+                        List<Image> images);
     }
 }

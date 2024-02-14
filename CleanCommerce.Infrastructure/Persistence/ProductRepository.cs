@@ -1,4 +1,5 @@
 ﻿using CleanCommerce.Application.Common.Interfaces.Persistence;
+using CleanCommerce.Domain.Common.ValueObjects;
 using CleanCommerce.Domain.Products;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -27,14 +28,19 @@ namespace CleanCommerce.Infrastructure.Persistence
         {
             return _products.Remove(product);
         }
-        public Product? Update(Guid toUpdateId, Product updated) 
+        public Product? Update(Guid toUpdateId,
+                               string name,
+                               string description,
+                               float price,
+                               int stock,
+                               List<Image> images) 
         {
             var toUpdate = GetById(toUpdateId);
-            return toUpdate?.Update(updated.Name,
-                                    updated.Description,
-                                    updated.Price,
-                                    updated.Stock,
-                                    updated.Images.ToList());
+            return toUpdate?.Update(name,
+                                    description,
+                                    price,
+                                    stock,
+                                    images.ToList());
         }
     }
 }

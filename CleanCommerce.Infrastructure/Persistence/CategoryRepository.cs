@@ -1,5 +1,7 @@
 ﻿using CleanCommerce.Application.Common.Interfaces.Persistence;
 using CleanCommerce.Domain.Categories;
+using CleanCommerce.Domain.Categories.ValueObjects;
+using CleanCommerce.Domain.Common.ValueObjects;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Concurrent;
@@ -27,14 +29,19 @@ namespace CleanCommerce.Infrastructure.Persistence
         {
             return _categories.Remove(category);
         }
-        public Category? Update(Guid toUpdateId, Category updated) 
+        public Category? Update(Guid toUpdateId, 
+                                    string name,
+                                    string description,
+                                    Image image,
+                                    CategoryId parent,
+                                    List<CategoryId> children) 
         {
             var toUpdate = GetById(toUpdateId);
-            return toUpdate?.Update(updated.Name,
-                                    updated.Description,
-                                    updated.Image,
-                                    updated.Parent,
-                                    updated.Children.ToList());
+            return toUpdate?.Update(name,
+                                    description,
+                                    image,
+                                    parent,
+                                    children.ToList());
         }
     }
 }

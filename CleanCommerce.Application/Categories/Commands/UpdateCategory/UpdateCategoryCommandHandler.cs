@@ -26,14 +26,13 @@ namespace CleanCommerce.Application.Categories.Commands
         {
             await Task.CompletedTask;
 
-            var updatedCategory = Category.Create(
+            var updatedCategory = _categoryRepository.Update(
+                toUpdateId: request.CategoryId,
                 name: request.Name,
                 description: request.Description,
                 image: Image.Create(request.Image.Url),
                 parent: CategoryId.Create(request.ParentCategoryId),
                 children: request.ChildrenCategoryIds.ConvertAll(guid => CategoryId.Create(guid)));
-
-            updatedCategory = _categoryRepository.Update(request.CategoryId, updatedCategory);
 
             if(updatedCategory == null) 
             {
