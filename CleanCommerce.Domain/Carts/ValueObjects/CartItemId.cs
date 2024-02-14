@@ -15,6 +15,7 @@ namespace CleanCommerce.Domain.Carts.ValueObjects
             Value = value;
         }
         public static CartItemId Create() => new(Guid.NewGuid());
+        public static CartItemId Create(Guid guid) => new(guid);
         public override IEnumerable<object> GetEqualityComponents()
         {
             yield return Value;

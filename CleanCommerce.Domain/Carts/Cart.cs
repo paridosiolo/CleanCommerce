@@ -2,6 +2,7 @@
 using CleanCommerce.Domain.Carts.ValueObjects;
 using CleanCommerce.Domain.Common.Models;
 using CleanCommerce.Domain.Common.Models.User.ValueObjects;
+using CleanCommerce.Domain.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,15 @@ namespace CleanCommerce.Domain.Carts
         public static Cart Create(UserId userId)
         {
             return new Cart(CartId.Create(), userId);
+        }
+
+        public Cart Update(List<CartItem> cartItems)
+        {
+            // Update the properties of the Cart object
+            this._cartItems.Clear();
+            this._cartItems.AddRange(cartItems);
+
+            return this;
         }
     }
 }

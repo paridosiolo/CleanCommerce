@@ -1,4 +1,5 @@
 ﻿using CleanCommerce.Application.Carts.Commands;
+using CleanCommerce.Application.Carts.Common;
 using CleanCommerce.Contracts.Cart;
 using CleanCommerce.Contracts.Common;
 using CleanCommerce.Domain.Carts;
@@ -13,11 +14,15 @@ namespace CleanCommerce.Api.Common.Mapping
         {
             config.NewConfig<CreateCartRequest, CreateCartCommand>();
 
+            config.NewConfig<UpdateCartRequest, UpdateCartCommand>();
+            config.NewConfig<CartItemRequest, CartItemCommand>();
+
             config.NewConfig<Cart, CartResponse>()
                 .Map(dest => dest.CartId, src => src.Id.Value)
                 .Map(dest => dest.UserId, src => src.UserId.Value);
 
             config.NewConfig<CartItem, CartItemResponse>()
+                .Map(dest => dest.CartItemId, src => src.Id.Value)
                 .Map(dest => dest.ProductId, src => src.ProductId.Value);
         }
     }

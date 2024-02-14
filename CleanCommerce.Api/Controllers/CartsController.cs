@@ -64,19 +64,19 @@ namespace CleanCommerce.Api.Controllers
             return Ok();
         }
 
-        //[HttpPut("update")]
-        //public async Task<IActionResult> UpdateCart(UpdateCartRequest request)
-        //{
-        //    var command = _mapper.Map<UpdateCartCommand>(request);
+        [HttpPut("update")]
+        public async Task<IActionResult> UpdateCart(UpdateCartRequest request)
+        {
+            var command = _mapper.Map<UpdateCartCommand>(request);
 
-        //    var updateCartResult = await _sender.Send(command);
+            var updateCartResult = await _sender.Send(command);
 
-        //    if (updateCartResult.IsFailed)
-        //    {
-        //        return Problem(updateCartResult.Errors);
-        //    }
+            if (updateCartResult.IsFailed)
+            {
+                return Problem(updateCartResult.Errors);
+            }
 
-        //    return Ok(_mapper.Map<CartResponse>(updateCartResult.Value));
-        //}
+            return Ok(_mapper.Map<CartResponse>(updateCartResult.Value));
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CleanCommerce.Domain.Carts;
+using CleanCommerce.Domain.Carts.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,6 @@ namespace CleanCommerce.Application.Common.Interfaces.Persistence
         void Add(Cart cart);
         Cart? GetById(Guid cartId);
         bool Delete(Cart cart);
-        Cart? Update(Guid toUpdateId, Cart updated);
+        Cart? Update(Guid toUpdateId, List<CartItem> cartItems);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CleanCommerce.Application.Common.Interfaces.Persistence;
 using CleanCommerce.Domain.Carts;
+using CleanCommerce.Domain.Carts.Entities;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Concurrent;
@@ -27,15 +28,11 @@ namespace CleanCommerce.Infrastructure.Persistence
         {
             return _carts.Remove(cart);
         }
-        public Cart? Update(Guid toUpdateId, Cart updated) 
+        public Cart? Update(Guid toUpdateId, List<CartItem> cartItems) 
         {
             var toUpdate = GetById(toUpdateId);
-            //return toUpdate?.Update(updated.Name,
-            //                        updated.Description,
-            //                        updated.Image,
-            //                        updated.Parent,
-            //                        updated.Children.ToList());
-            throw new NotImplementedException();
+
+            return toUpdate?.Update(cartItems);
         }
     }
 }
