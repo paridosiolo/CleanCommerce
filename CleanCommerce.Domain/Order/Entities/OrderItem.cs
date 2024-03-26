@@ -1,5 +1,5 @@
 ﻿using CleanCommerce.Domain.Common.Models;
-using CleanCommerce.Domain.Order.ValueObjects;
+using CleanCommerce.Domain.Orders.ValueObjects;
 using CleanCommerce.Domain.Products.ValueObjects;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Domain.Order.Entities
+namespace CleanCommerce.Domain.Orders.Entities
 {
     public sealed class OrderItem : Entity<OrderItemId>
     {

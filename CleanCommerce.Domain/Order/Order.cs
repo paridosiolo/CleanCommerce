@@ -1,30 +1,25 @@
 ﻿using CleanCommerce.Domain.Common.Models;
 using CleanCommerce.Domain.Common.Models.User.ValueObjects;
-using CleanCommerce.Domain.Order.ValueObjects;
-using CleanCommerce.Domain.Order.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CleanCommerce.Domain.Order.Enums;
+using CleanCommerce.Domain.Orders.ValueObjects;
+using CleanCommerce.Domain.Orders.Entities;
+using CleanCommerce.Domain.Orders.Enums;
 
-namespace CleanCommerce.Domain.Order
+namespace CleanCommerce.Domain.Orders
 {
     public sealed class Order : AggregateRoot<OrderId>
     {
-        private readonly List<UserId> _userIds = new();
         private readonly List<OrderItem> _orderitems = new();
+        public UserId UserId { get; private set; }
         public decimal TotalPrice { get; private set; }
         public Address ShippingAddress { get; private set; }
         public DateTime Created { get;}
         public DateTime Updated { get; private set; }
         public OrderStatus Status { get; private set; }
         public Payment Payment { get; private set; }
-        public IReadOnlyList<UserId> UserIds => _userIds.AsReadOnly();
         public IReadOnlyList<OrderItem> OrderItems => _orderitems.AsReadOnly();
 
         private Order(OrderId id,
+                      UserId userId,
                       List<OrderItem> orderitems,
                       decimal totalPrice,
                       Address shippingAddress,
@@ -33,6 +28,7 @@ namespace CleanCommerce.Domain.Order
                       OrderStatus status,
                       Payment payment) : base(id)
         {
+            UserId = userId;
             _orderitems = orderitems;
             TotalPrice = totalPrice;
             ShippingAddress = shippingAddress;
@@ -42,19 +38,20 @@ namespace CleanCommerce.Domain.Order
             Payment = payment;
         }
 
-        public static Order Create(List<OrderItem> orderItems,
-                                   decimal totalprice,
+        public static Order Create(UserId userId,
+                                   List<OrderItem> orderItems,
+                                   decimal totalPrice,
                                    Address shippingAddress,
-                                   OrderStatus status,
                                    Payment payment)
         {
             return new Order(OrderId.Create(),
+                             userId,
                              orderItems,
-                             totalprice,
+                             totalPrice,
                              shippingAddress,
                              DateTime.UtcNow,
                              DateTime.UtcNow,
-                             status,
+                             OrderStatus.Created,
                              payment);
         }
     } 

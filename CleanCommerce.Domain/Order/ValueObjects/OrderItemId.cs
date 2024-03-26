@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CleanCommerce.Domain.Common.Models;
 
-namespace CleanCommerce.Domain.Order.ValueObjects
+namespace CleanCommerce.Domain.Orders.ValueObjects
 {
     public sealed class OrderItemId : ValueObject
     {

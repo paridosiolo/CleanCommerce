@@ -13,5 +13,4 @@ namespace CleanCommerce.Contracts.Product
         float Price,
         int Stock,
         List<ImageRequest> Images);
-
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Domain.Order.Enums
+namespace CleanCommerce.Domain.Orders.Enums
 {
     public enum OrderStatus
     {

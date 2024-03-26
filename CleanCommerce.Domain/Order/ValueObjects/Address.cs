@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Domain.Order.ValueObjects
+namespace CleanCommerce.Domain.Orders.ValueObjects
 {
     public sealed class Address : ValueObject
     {
@@ -25,7 +25,7 @@ namespace CleanCommerce.Domain.Order.ValueObjects
             Zip = zip;
         }
 
-        public Address Create(string street,
+        public static Address Create(string street,
                                 string city,
                                 string state,
                                 string zip)

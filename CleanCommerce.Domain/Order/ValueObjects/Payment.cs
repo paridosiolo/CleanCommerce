@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleanCommerce.Domain.Order.ValueObjects
+namespace CleanCommerce.Domain.Orders.ValueObjects
 {
     public sealed class Payment : ValueObject
     {
