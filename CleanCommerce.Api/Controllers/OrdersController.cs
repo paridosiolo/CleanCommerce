@@ -1,7 +1,6 @@
 ﻿using CleanCommerce.Application.Orders.Commands;
 using CleanCommerce.Application.Orders.Commands.CreateOrder;
 using CleanCommerce.Application.Orders.Queries.GetOrder;
-using CleanCommerce.Application.Products.Commands;
 using CleanCommerce.Contracts.Order;
 using MapsterMapper;
 using MediatR;
@@ -63,6 +62,21 @@ namespace CleanCommerce.Api.Controllers
             }
 
             return Ok();
+        }
+
+        [HttpPut("update")]
+        public async Task<IActionResult> UpdateOrder(UpdateOrderRequest request)
+        {
+            var command = _mapper.Map<UpdateOrderCommand>(request);
+
+            var updateOrderResult = await _sender.Send(command);
+
+            if (updateOrderResult.IsFailed)
+            {
+                return Problem(updateOrderResult.Errors);
+            }
+
+            return Ok(_mapper.Map<OrderResponse>(updateOrderResult.Value));
         }
     }
 }

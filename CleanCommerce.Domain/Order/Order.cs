@@ -54,5 +54,26 @@ namespace CleanCommerce.Domain.Orders
                              OrderStatus.Created,
                              payment);
         }
+
+        public Order Update(Guid userId,
+                            List<OrderItem> orderItems,
+                            decimal totalPrice,
+                            OrderStatus status,
+                            Address shippingAddress,
+                            Payment payment)
+        {
+            this.Updated = DateTime.UtcNow;
+
+            this.UserId = UserId.Create(userId);
+            this.TotalPrice = totalPrice;
+            this.Status = status;
+            this.ShippingAddress = shippingAddress; 
+            this.Payment = payment;
+
+            this._orderitems.Clear();
+            this._orderitems.AddRange(orderItems);
+
+            return this;
+        }
     } 
 }

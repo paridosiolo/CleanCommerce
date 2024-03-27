@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace CleanCommerce.Contracts.Order
 {
-    public record OrderResponse(
-        string OrderId,
-        string UserId,
-        List<OrderItemResponse> OrderItems,
+    public record UpdateOrderRequest(
+        Guid OrderId,
+        Guid UserId,
+        List<OrderItemRequest> OrderItems,
         decimal TotalPrice,
-        AddressResponse ShippingAddress,
-        PaymentResponse Payment
+        string Status,
+        AddressRequest ShippingAddress,
+        PaymentRequest Payment
         );
 }

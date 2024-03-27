@@ -221,7 +221,7 @@ PUT {{host}}/order/{{id}}
 	},
 	"created" : "2016-01-01T00:00:00.0000000Z",
 	"updated" : "2016-01-01T00:00:00.0000000Z",
-	"status" : "working"
+	"status" : "working",
 	"payment" : {
 		"cardNumber" : "0000000000000000",
 		"expirationDate" : "2016-01-01T00:00:00.0000000Z",
