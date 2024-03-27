@@ -20,8 +20,8 @@ namespace CleanCommerce.Api.Common.Mapping
                 .Map(dest => dest.UserId, src => src.UserId.Value);
 
             config.NewConfig<OrderItem, OrderItemResponse>()
-                .Map(dest => dest.ProductId, src => src.ProductId.Value)
-                .Map(dest => dest.OrderItemId, src => src.Id.Value);
+                .Map(dest => dest.OrderItemId, src => src.Id.Value)
+                .Map(dest => dest.ProductId, src => src.ProductId.Value);
             
             //config.NewConfig<UpdateOrderRequest, UpdateOrderCommand>();
         }

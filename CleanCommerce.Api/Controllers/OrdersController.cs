@@ -1,4 +1,5 @@
 ﻿using CleanCommerce.Application.Orders.Commands.CreateOrder;
+using CleanCommerce.Application.Orders.Queries.GetOrder;
 using CleanCommerce.Contracts.Order;
 using MapsterMapper;
 using MediatR;
@@ -32,10 +33,19 @@ namespace CleanCommerce.Api.Controllers
             return Ok(_mapper.Map<OrderResponse>(createOrderResult.Value));
         }
 
-        [HttpGet]
-        public IActionResult GetOrders()
+        [HttpGet("{orderId}")]
+        public async Task<IActionResult> GetOrder(Guid orderId)
         {
-            return Ok(new string[] { "caio", "mario"});
+            var query = new GetOrderQuery(orderId);
+
+            var getOrderResult = await _sender.Send(query);
+
+            if(getOrderResult.IsFailed)
+            {
+                return Problem(getOrderResult.Errors);
+            }
+
+            return Ok(_mapper.Map<OrderResponse>(getOrderResult.Value));
         }
     }
 }
