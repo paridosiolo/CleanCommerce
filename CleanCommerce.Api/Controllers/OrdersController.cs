@@ -1,5 +1,7 @@
-﻿using CleanCommerce.Application.Orders.Commands.CreateOrder;
+﻿using CleanCommerce.Application.Orders.Commands;
+using CleanCommerce.Application.Orders.Commands.CreateOrder;
 using CleanCommerce.Application.Orders.Queries.GetOrder;
+using CleanCommerce.Application.Products.Commands;
 using CleanCommerce.Contracts.Order;
 using MapsterMapper;
 using MediatR;
@@ -46,6 +48,21 @@ namespace CleanCommerce.Api.Controllers
             }
 
             return Ok(_mapper.Map<OrderResponse>(getOrderResult.Value));
+        }
+
+        [HttpDelete("{orderId}")]
+        public async Task<IActionResult> DeleteOrder(Guid orderId)
+        {
+            var command = new DeleteOrderCommand(orderId);
+
+            var deleteOrderResult = await _sender.Send(command);
+
+            if (deleteOrderResult.IsFailed)
+            {
+                return Problem(deleteOrderResult.Errors);
+            }
+
+            return Ok();
         }
     }
 }
