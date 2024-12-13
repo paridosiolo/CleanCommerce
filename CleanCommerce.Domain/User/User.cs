@@ -69,7 +69,8 @@ namespace CleanCommerce.Domain.User
                             DateTime.UtcNow,
                             false);
 
-            user.Roles.Add(Role.Customer);
+            //WARNING: HardCoded Admin Role for every user created!!!
+            user.Roles.Add(Role.Admin);
 
             return user;
         }

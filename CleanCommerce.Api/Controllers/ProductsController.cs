@@ -1,4 +1,5 @@
 ﻿using CleanCommerce.Application.Products.Commands;
+using CleanCommerce.Application.Products.Common;
 using CleanCommerce.Application.Products.Queries;
 using CleanCommerce.Contracts.Product;
 using MapsterMapper;
@@ -19,9 +20,16 @@ namespace CleanCommerce.Api.Controllers
         }
 
         [HttpPost("create")]
-        public async Task<IActionResult> CreateProduct(CreateProductRequest request)
+        public async Task<IActionResult> CreateProduct(Guid userId, CreateProductRequest request)
         {
-            var command = _mapper.Map<CreateProductCommand>(request);
+            var command = new CreateProductCommand(
+                userId,
+                request.Name,
+                request.Description,
+                request.Price,
+                request.Stock,
+                request.Images.ConvertAll(x => new ImageCommand(x.Url))
+            );
 
             var createProductResult = await _sender.Send(command);
 
